@@ -16,8 +16,8 @@ if (!paths.includes(path)) {
   window.pagekraft = window.pagekraft || {};
   window.pagekraft.auth = {
     config: {
-      domain: 'angulare.studiocomova.com.br',
-      domain_dev: 'comova.dev.angular-ecommerce.com',
+      domain: 'apexperformance.dev.angular-ecommerce.com',
+      domain_dev: 'apexperformance.dev.angular-ecommerce.com',
       angulareVersion: 'latest-v4',
       config: {
         packagePageUrl: '/planos',

@@ -16,13 +16,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="pt-BR"
       data-scroll-behavior="smooth"
-      className={`${geist.variable} h-full antialiased`}
+      className={`${geist.variable} h-full bg-brand-bg antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-brand-surface text-foreground">
+      <body className="min-h-full flex flex-col bg-brand-bg text-foreground">
         <PagekraftAuthScripts />
         <Navbar />
         <main className="flex-1">{children}</main>
-        <footer className="border-t border-brand-blue/10 bg-white py-6 text-center text-sm text-brand-blue/60">
+        <footer className="border-t border-white/10 bg-brand-surface py-6 text-center text-sm text-foreground-muted">
           © {new Date().getFullYear()} FitZone Academia. Todos os direitos reservados.
         </footer>
       </body>

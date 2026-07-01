@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --brand-blue: #005596;
-  --brand-teal: #17b9c7;
-  --brand-surface: #eef7fb;
-  --brand-white: #ffffff;
-  --background: var(--brand-surface);
-  --foreground: #003d6b;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-brand-blue: var(--brand-blue);
-  --color-brand-teal: var(--brand-teal);
-  --color-brand-surface: var(--brand-surface);
+/* Paleta dark — alinhada ao modal Pagekraft (amarelo + fundo escuro) */
+@theme {
+  --color-brand-primary: #ffc107;
+  --color-brand-primary-hover: #fdb913;
+  --color-brand-bg: #0f1116;
+  --color-brand-surface: #1a1d24;
+  --color-brand-elevated: #2a2f3b;
+  --color-foreground: #ffffff;
+  --color-foreground-muted: #a0a6b2;
+  --color-background: #0f1116;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+:root {
+  color-scheme: dark;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #0f1116;
+  color: #ffffff;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Links do site — sobrescreve azul/sublinhado do browser e do Pagekraft */
+header a,
+main a,
+footer a {
+  text-decoration: none !important;
+}
+
+header a:link,
+header a:visited,
+main a:link,
+main a:visited,
+footer a:link,
+footer a:visited {
+  text-decoration: none !important;
 }

@@ -9,29 +9,29 @@ const links = [
   { href: "/pacotes", label: "Pacotes", hardNav: true },
 ];
 
-const btnTeal =
-  "rounded-lg bg-brand-teal px-4 py-2 text-sm font-semibold text-brand-blue cursor-pointer transition hover:brightness-110";
-const btnWhite =
-  "rounded-lg bg-white px-4 py-2 text-sm font-semibold text-brand-blue cursor-pointer transition hover:bg-brand-surface";
+const btnPrimary =
+  "inline-flex items-center no-underline rounded-lg bg-brand-primary px-4 py-2 text-sm font-semibold !text-brand-bg cursor-pointer transition hover:bg-brand-primary-hover";
 const btnOutline =
-  "rounded-lg border border-brand-teal px-4 py-2 text-sm font-semibold text-brand-teal cursor-pointer transition hover:bg-brand-teal/10";
+  "inline-flex items-center no-underline rounded-lg border border-brand-primary px-4 py-2 text-sm font-semibold !text-brand-primary cursor-pointer transition hover:bg-brand-primary/10";
+const btnGhost =
+  "inline-flex items-center no-underline rounded-lg border border-white/15 bg-brand-elevated px-4 py-2 text-sm font-semibold !text-white cursor-pointer transition hover:border-brand-primary/50 hover:!text-brand-primary";
 
 export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-brand-blue text-white shadow-md">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-surface text-white shadow-lg">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-3">
-        <Link href="/" className="text-xl font-bold tracking-tight text-white">
-          Fit<span className="text-brand-teal">Zone</span>
+        <Link href="/" className="no-underline text-xl font-bold tracking-tight !text-white">
+          Fit<span className="text-brand-primary">Zone</span>
         </Link>
 
         <nav className="flex gap-6">
           {links.map(({ href, label, hardNav }) => {
-            const className = `text-sm font-medium transition-colors ${
+            const className = `no-underline text-sm font-medium transition-colors ${
               pathname === href
-                ? "text-brand-teal"
-                : "text-white/80 hover:text-white"
+                ? "!text-brand-primary"
+                : "!text-white/70 hover:!text-white"
             }`;
 
             return hardNav ? (
@@ -46,35 +46,29 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Hooks do Pagekraft Auth — o plugin controla visibilidade e cliques */}
         <div className="flex flex-wrap items-center gap-2">
-          <a href="/pacotes" className={btnTeal}>
+          <a href="/pacotes" className={btnPrimary}>
             Comprar
           </a>
 
-          <a href="/agenda" className={btnWhite}>
+          <a href="/agenda" className={btnGhost}>
             Reservar
           </a>
 
           <span className={`${btnOutline} pagekraft-auth-register`}>Cadastrar</span>
-
           <span className={`${btnOutline} pagekraft-auth-login`}>Login</span>
-
           <span className={`${btnOutline} pagekraft-auth-logout`}>Logout</span>
-
           <span className={`${btnOutline} pagekraft-auth-passwordforgot`}>
             Esqueci minha senha
           </span>
-
-          <span className={`${btnWhite} pagekraft-auth-checkout`}>Carrinho</span>
-
+          <span className={`${btnGhost} pagekraft-auth-checkout`}>Carrinho</span>
           <span className={`${btnOutline} pagekraft-auth-my-account`}>Minha conta</span>
 
-          <span className="rounded-lg px-2 py-1 text-sm font-semibold text-brand-teal pagekraft-auth-fullname">
+          <span className="rounded-lg px-2 py-1 text-sm font-semibold text-brand-primary pagekraft-auth-fullname">
             Olá usuário
           </span>
 
-          <div className="pagekraft-auth-credits text-sm font-medium text-brand-teal" />
+          <div className="pagekraft-auth-credits text-sm font-medium text-brand-primary" />
         </div>
       </div>
     </header>
